@@ -3,9 +3,9 @@
 public class EnemyManagerLF : MonoBehaviour
 {
     public PlayerHealthLF playerHealth;     // Reference to the player's heatlh.
-    public GameObject enemy;                // The enemy prefab to be spawned.
+    public GameObject[] enemies;            // An array of the enemy types that can be spawned.
     public float spawnTime = 3.0f;          // How long between each spawn.
-    public Transform[] spawnPoints;         // An array of the spawn points this enemy can spawn from.
+    public Transform[] spawnPoints;         // An array of the spawn points the enemies can spawn from.
 
     void Start()
     {
@@ -14,12 +14,13 @@ public class EnemyManagerLF : MonoBehaviour
 
     void Spawn()
     {
-        if (playerHealth.currentHealth <= 0 || playerHealth.currentFear >= 40)
+        if (playerHealth.IsDead())
         {
             return;
         }
 
         int spawnPointIndex = Random.Range(0, spawnPoints.Length);
-        Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+        int enemyIndex = Random.Range(0, enemies.Length);
+        Instantiate(enemies[enemyIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
     }
 }

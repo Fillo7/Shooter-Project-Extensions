@@ -45,7 +45,7 @@ public class EnemyAttackLF : MonoBehaviour
             Attack();
         }
 
-        if (playerHealth.currentHealth <= 0)
+        if (playerHealth.IsDead())
         {
             anim.SetTrigger("PlayerDead");
         }
@@ -55,7 +55,7 @@ public class EnemyAttackLF : MonoBehaviour
     {
         timer = 0.0f;
 
-        if (playerHealth.currentHealth > 0)
+        if (!playerHealth.IsDead())
         {
             playerHealth.TakeDamage(attackDamage);
         }

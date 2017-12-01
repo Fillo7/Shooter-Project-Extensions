@@ -17,7 +17,7 @@ public class EnemyMovementLF : MonoBehaviour
 
     void Update()
     {
-        if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
+        if (enemyHealth.currentHealth > 0 && !playerHealth.IsDead())
         {
             nav.SetDestination(player.position);
         }

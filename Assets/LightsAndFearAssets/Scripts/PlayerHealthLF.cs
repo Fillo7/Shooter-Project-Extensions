@@ -33,6 +33,7 @@ public class PlayerHealthLF : MonoBehaviour
         playerShooting = GetComponentInChildren<PlayerShooting>();
         currentHealth = startingHealth;
         currentFear = startingFear;
+        fearSlider.value = startingFear;
     }
 
     void OnTriggerEnter(Collider other)
@@ -74,6 +75,16 @@ public class PlayerHealthLF : MonoBehaviour
         damaged = false;
     }
 
+    public bool IsDead()
+    {
+        return isDead;
+    }
+
+    public void ResetLight()
+    {
+        isInLight = false;
+    }
+
     public void TakeDamage(int amount)
     {
         damaged = true;
@@ -98,7 +109,7 @@ public class PlayerHealthLF : MonoBehaviour
         currentFear += amount;
         fearSlider.value = currentFear;
 
-        if (currentFear >= 40 && !isDead)
+        if (currentFear >= 30 && !isDead)
         {
             Death();
         }

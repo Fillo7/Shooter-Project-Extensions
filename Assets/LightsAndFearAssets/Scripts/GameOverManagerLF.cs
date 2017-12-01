@@ -13,7 +13,7 @@ public class GameOverManagerLF : MonoBehaviour
 
     void Update()
     {
-        if (playerHealth.currentHealth <= 0 || playerHealth.currentFear >= 40)
+        if (playerHealth.IsDead())
         {
             anim.SetTrigger("GameOver");
         }
