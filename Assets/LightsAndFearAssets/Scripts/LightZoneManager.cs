@@ -4,7 +4,7 @@ public class LightZoneManager : MonoBehaviour
 {
     public PlayerHealthLF playerHealth;
     public GameObject lightZone;
-    public float spawnTime = 10.0f;
+    public float spawnTime = 15.0f;
     public Transform[] spawnPoints;
 
     private GameObject currentLightZone = null;
@@ -12,7 +12,7 @@ public class LightZoneManager : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("Spawn", 5.0f, spawnTime);
+        InvokeRepeating("Spawn", 2.0f, spawnTime);
     }
 
     private void Spawn()
@@ -36,7 +36,7 @@ public class LightZoneManager : MonoBehaviour
         }
 
         Destroy(currentLightZone);
-        playerHealth.ResetLight();
+        playerHealth.SetInLight(false);
     }
 
     private int RandomExcept(int min, int max, int except)

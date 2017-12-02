@@ -370,8 +370,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e25067e458e5347bb585dfd6720102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAttacks: 0.5
-  attackDamage: 30
+  timeBetweenAttacks: 1
+  attackDamage: 35
 --- !u!114 &114539055580610984
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -385,8 +385,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 300
   currentHealth: 0
-  sinkSpeed: 2.5
-  scoreValue: 30
+  sinkSpeed: 1.2
+  scoreValue: 40
   deathClip: {fileID: 8300000, guid: 8c615fd0429f34edf85539d70279360d, type: 3}
 --- !u!135 &135260632161287134
 SphereCollider:
@@ -467,7 +467,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1.2
-  m_Speed: 2
+  m_Speed: 2.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

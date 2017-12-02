@@ -12,6 +12,7 @@ public class PlayerHealthLF : MonoBehaviour
     public Slider healthSlider;                                     // Reference to the UI's health bar.
     public Slider fearSlider;                                       // Reference to the UI's fear bar.
     public Image damageImage;                                       // Reference to an image to flash on the screen on being hurt.
+    public Image fearImage;                                         // Reference to an image to darken the screen based on fear value.
     public AudioClip deathClip;                                     // The audio clip to play when the player dies.
     public float flashSpeed = 5.0f;                                 // The speed the damageImage will fade at.
     public Color flashColour = new Color(1.0f, 0.0f, 0.0f, 0.1f);   // The colour the damageImage is set to, to flash.
@@ -80,9 +81,9 @@ public class PlayerHealthLF : MonoBehaviour
         return isDead;
     }
 
-    public void ResetLight()
+    public void SetInLight(bool flag)
     {
-        isInLight = false;
+        isInLight = flag;
     }
 
     public void TakeDamage(int amount)

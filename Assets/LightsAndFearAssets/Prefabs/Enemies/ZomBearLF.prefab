@@ -344,8 +344,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 120
   currentHealth: 0
-  sinkSpeed: 2.5
-  scoreValue: 15
+  sinkSpeed: 0.4
+  scoreValue: 20
   deathClip: {fileID: 8300000, guid: 62366b8d2c37a49dca550841c741317f, type: 3}
 --- !u!114 &114757296395896316
 MonoBehaviour:
@@ -450,7 +450,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.3
-  m_Speed: 3
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
