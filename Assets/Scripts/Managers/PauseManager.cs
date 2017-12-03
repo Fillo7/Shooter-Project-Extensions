@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -8,7 +9,8 @@ public class PauseManager : MonoBehaviour
 {
     public AudioMixerSnapshot paused;
     public AudioMixerSnapshot unpaused;
-    
+    public Canvas changeLevelCanvas;
+
     private Canvas canvas;
     
     void Start()
@@ -21,7 +23,14 @@ public class PauseManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             canvas.enabled = !canvas.enabled;
-            Pause();
+            if (changeLevelCanvas.enabled)
+            {
+                changeLevelCanvas.enabled = false;
+            }
+            else
+            {
+                Pause();
+            }
         }
     }
     
@@ -31,6 +40,18 @@ public class PauseManager : MonoBehaviour
         Lowpass();
     }
     
+    public void ToggleChangeLevelMenu(bool flag)
+    {
+        changeLevelCanvas.enabled = flag;
+        canvas.enabled = !flag;
+    }
+
+    public void LoadLevel(string levelName)
+    {
+        Pause();
+        SceneManager.LoadScene(levelName);
+    }
+
     void Lowpass()
     {
         if (Time.timeScale == 0)

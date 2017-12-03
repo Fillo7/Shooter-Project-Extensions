@@ -13,5 +13,5 @@ The fear can be reset by walking into yellow lights that spawn randomly at certa
 
 Notes
 -----
-* (Todo) Level selection is available inside main menu
+* Level selection is available from main menu
 * Main menu can be opened by pressing escape button
