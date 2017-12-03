@@ -12,10 +12,11 @@ public class PlayerHealthLF : MonoBehaviour
     public Slider healthSlider;                                     // Reference to the UI's health bar.
     public Slider fearSlider;                                       // Reference to the UI's fear bar.
     public Image damageImage;                                       // Reference to an image to flash on the screen on being hurt.
-    public Image fearImage;                                         // Reference to an image to darken the screen based on fear value.
+    public Image fearImage;                                         // Reference to an image to flash on the screen on fear reaching certain values.
     public AudioClip deathClip;                                     // The audio clip to play when the player dies.
     public float flashSpeed = 5.0f;                                 // The speed the damageImage will fade at.
     public Color flashColour = new Color(1.0f, 0.0f, 0.0f, 0.1f);   // The colour the damageImage is set to, to flash.
+    public Color fearColour = new Color(0.31f, 0.08f, 0.39f, 0.1f); // The colour the fearImage is set to, to flash.
 
     private Animator anim;                                          // Reference to the Animator component.
     private AudioSource playerAudio;                                // Reference to the AudioSource component.
@@ -71,6 +72,16 @@ public class PlayerHealthLF : MonoBehaviour
         else
         {
             damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+        }
+
+        if (currentFear >= 15 && currentFear % 5 == 0)
+        {
+            fearImage.color = fearColour;
+            
+        }
+        else
+        {
+            fearImage.color = Color.Lerp(fearImage.color, Color.clear, flashSpeed * Time.deltaTime);
         }
 
         damaged = false;

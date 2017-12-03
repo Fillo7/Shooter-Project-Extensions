@@ -8,11 +8,11 @@ public class LightZoneManager : MonoBehaviour
     public Transform[] spawnPoints;
 
     private GameObject currentLightZone = null;
-    private int spawnPointIndex = 0;
+    private int spawnPointIndex = -1;
 
     void Start()
     {
-        InvokeRepeating("Spawn", 2.0f, spawnTime);
+        InvokeRepeating("Spawn", 3.0f, spawnTime);
     }
 
     private void Spawn()
@@ -24,7 +24,15 @@ public class LightZoneManager : MonoBehaviour
             return;
         }
 
-        spawnPointIndex = RandomExcept(0, spawnPoints.Length, spawnPointIndex);
+        if (spawnPointIndex == -1)
+        {
+            spawnPointIndex = Random.Range(0, spawnPoints.Length);
+        }
+        else
+        {
+            spawnPointIndex = RandomExcept(0, spawnPoints.Length, spawnPointIndex);
+        }
+        
         currentLightZone = Instantiate(lightZone, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
     }
 
