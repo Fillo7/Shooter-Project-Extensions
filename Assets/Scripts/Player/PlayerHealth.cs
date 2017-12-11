@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
     public AudioClip deathClip;                                     // The audio clip to play when the player dies.
     public float flashSpeed = 5.0f;                                 // The speed the damageImage will fade at.
     public Color flashColour = new Color(1.0f, 0.0f, 0.0f, 0.1f);   // The colour the damageImage is set to, to flash.
+    public Color flashColour2 = new Color(0.0f, 1.0f, 0.0f, 0.05f);
+    public Image healImage;
 
     private Animator anim;                                          // Reference to the Animator component.
     private AudioSource playerAudio;                                // Reference to the AudioSource component.
@@ -18,6 +20,7 @@ public class PlayerHealth : MonoBehaviour
     private PlayerShooting playerShooting;                          // Reference to the PlayerShooting script.
     private bool isDead;                                            // Whether the player is dead.
     private bool damaged;                                           // True when the player gets damaged.
+    private bool healed;
 
     void Awake()
     {
@@ -40,6 +43,17 @@ public class PlayerHealth : MonoBehaviour
         }
 
         damaged = false;
+
+        if (healed)
+        {
+            healImage.color = flashColour2;
+        }
+        else
+        {
+            healImage.color = Color.Lerp(healImage.color, Color.clear, flashSpeed * Time.deltaTime);
+        }
+
+        healed = false;
     }
 
     public void TakeDamage(int amount)
@@ -71,5 +85,27 @@ public class PlayerHealth : MonoBehaviour
     public void RestartLevel()
     {
         SceneManager.LoadScene(0);
+    }
+
+
+    public void Heal(int amount)
+    {
+        if (currentHealth < startingHealth)
+        {
+            healed = true;
+            if (currentHealth > (startingHealth - amount))
+            {
+                currentHealth = startingHealth;
+                healthSlider.value = startingHealth;
+            }
+            else
+            {
+                if (currentHealth != 0)
+                {
+                    currentHealth += amount;
+                    healthSlider.value = currentHealth;
+                }
+            }
+        }
     }
 }

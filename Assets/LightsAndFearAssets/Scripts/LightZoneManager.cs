@@ -4,7 +4,7 @@ public class LightZoneManager : MonoBehaviour
 {
     public PlayerHealthLF playerHealth;
     public GameObject lightZone;
-    public float spawnTime = 20.0f;
+    public float spawnTime = 15.0f;
     public Transform[] spawnPoints;
 
     private GameObject currentLightZone = null;
