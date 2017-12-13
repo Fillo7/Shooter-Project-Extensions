@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ZombirdsNest.unity
     guid: c790f46eb3d068c4094906ecd70849ed
+  - enabled: 1
+    path: Assets/Scenes/Doctor.unity
+    guid: e8a378cb06649ee4680bf9473fd0ac95

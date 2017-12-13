@@ -6,6 +6,7 @@ TagManager:
   tags:
   - LightZone
   - Enemy
+  - Doctor
   layers:
   - Default
   - TransparentFX

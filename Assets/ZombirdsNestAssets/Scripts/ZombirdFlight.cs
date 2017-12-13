@@ -20,17 +20,20 @@ public class ZombirdFlight : MonoBehaviour {
 
 	void Awake()
 	{
-		player = GameObject.FindGameObjectWithTag("Player");	}
+		player = GameObject.FindGameObjectWithTag("Player");
+	}
 
 	void OnTriggerEnter(Collider other)
-	{		if (!kamikazeModeOn)
+	{
+		if (!kamikazeModeOn)
 		{
 			if (other.gameObject == player)
 			{
 				kamikazeTarget = other.gameObject.transform.position;
 				kamikazeModeOn = true;
 			}
-		}	 }
+		}
+	 }
 
 	// Update is called once per frame
 	void Update () {
