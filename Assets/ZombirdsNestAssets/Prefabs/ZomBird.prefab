@@ -531,6 +531,7 @@ MonoBehaviour:
   speed: 2
   explosionDamage: 40
   explosionRadius: 5
+  explosion: {fileID: 1491795811837416, guid: 62fedeb6eab1cb941a466d27f287d278, type: 2}
   kamikazeAcceleration: 1.02
 --- !u!135 &135230747544882200
 SphereCollider:

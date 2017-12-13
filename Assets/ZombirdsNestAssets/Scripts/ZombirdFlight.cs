@@ -11,6 +11,7 @@ public class ZombirdFlight : MonoBehaviour {
 	public float speed;
 	public int explosionDamage;
 	public float explosionRadius;
+	public GameObject explosion;
 
 	Vector3 kamikazeTarget;
 	public float kamikazeAcceleration;
@@ -100,6 +101,7 @@ public class ZombirdFlight : MonoBehaviour {
 				PlayerHealth playerHealth = player.gameObject.GetComponent<PlayerHealth>();
 				playerHealth.TakeDamage(explosionDamage);
 			}
+		Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
         Destroy(gameObject);
 	}
 
