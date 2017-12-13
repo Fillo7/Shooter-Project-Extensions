@@ -14,3 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LightsAndFear.unity
     guid: eeb3de7141b1ca9449b95700f9e8dfe0
+  - enabled: 1
+    path: Assets/Scenes/Doctor.unity
+    guid: e8a378cb06649ee4680bf9473fd0ac95
