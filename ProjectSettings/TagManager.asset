@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - LightZone
-  - Doctor
+  - Enemy
   layers:
   - Default
   - TransparentFX

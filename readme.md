@@ -9,7 +9,7 @@ contains one new mechanic and a new level:
 * LightsAndFear - Player has fear attribute which keeps slowly increasing and results in player death when it reaches peak.
 The fear can be reset by walking into yellow lights that spawn randomly at certain locations inside the level.
 * ZombirdsNest - Level with new enemy - Zombird. Zombird flies around, patrolling, and when it sees a player, it charges to the location when it first saw the player, and explodes when it hits the floor, hurting all characters in its blast radius.
-* Doctor - Adds additional npc - a doctor, which is randomly wandering through map. When player is near the doctor, he gets healed. Enemies attack the doctor when they are near him. Once doctor is dead, a new one spawns after some time. There is only one doctor on the map in the moment. The doctor has four spawn points.
+* (Todo) Gameplay extension 3
 
 Changes made to initial gameplay mechanic and level design
 ----------------------------------------------------------
@@ -24,10 +24,6 @@ Changes made to initial gameplay mechanic and level design
     - Gameplay mechanic remains unchanged
     - Level was modified because the original proved to be too complicated and the current level still demonstrates all of zombirds abilites
 
-* Doctor
-    - Different map layout, more spawn points
-    - The doctor moves randomly
-    
 Notes
 -----
 * Level selection is available from main menu
